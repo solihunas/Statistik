@@ -7,6 +7,7 @@ import SettingsBar from './components/SettingsBar';
 import TradeForm from './components/TradeForm';
 import TradeTable from './components/TradeTable';
 import Dashboard from './components/Dashboard';
+import BulkAddPanel from './components/BulkAddPanel';
 
 type Tab = 'input' | 'dashboard';
 
@@ -29,6 +30,10 @@ function App() {
       return exists ? prev.map((t) => (t.id === trade.id ? trade : t)) : [...prev, trade];
     });
     setEditingTrade(null);
+  }
+
+  function handleAddBulkTrades(newTrades: Trade[]) {
+    setTrades((prev) => [...prev, ...newTrades]);
   }
 
   function handleDeleteTrade(id: string) {
@@ -101,6 +106,7 @@ function App() {
               onCancelEdit={() => setEditingTrade(null)}
               lastSymbol={lastSymbol}
             />
+            <BulkAddPanel onAddTrades={handleAddBulkTrades} />
             <TradeTable trades={trades} onEdit={setEditingTrade} onDelete={handleDeleteTrade} />
           </div>
         ) : (
