@@ -19,7 +19,7 @@ export default function SettingsBar({
   const inputCls = 'bg-[#1a1a19] border border-[#2c2c2a] rounded px-2.5 py-1.5 text-sm text-white focus:outline-none focus:border-[#3987e5]';
 
   return (
-    <div className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-4 flex flex-wrap items-end gap-3">
+    <div className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-3 flex flex-wrap items-end gap-2">
       <div>
         <label className="text-[11px] uppercase tracking-wide text-[#898781] mb-1 block">Nama Akun</label>
         <input
@@ -51,17 +51,17 @@ export default function SettingsBar({
 
       <div className="flex flex-wrap gap-2">
         {!hasTrades && (
-          <button onClick={onLoadSample} className="text-xs px-3 py-2 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
+          <button onClick={onLoadSample} className="text-xs px-2.5 py-1.5 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
             Muat Data Contoh
           </button>
         )}
-        <button onClick={onExportCsv} className="text-xs px-3 py-2 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
+        <button onClick={onExportCsv} className="text-xs px-2.5 py-1.5 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
           Export CSV
         </button>
-        <button onClick={onExportJson} className="text-xs px-3 py-2 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
+        <button onClick={onExportJson} className="text-xs px-2.5 py-1.5 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
           Export Backup (JSON)
         </button>
-        <button onClick={() => fileRef.current?.click()} className="text-xs px-3 py-2 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
+        <button onClick={() => fileRef.current?.click()} className="text-xs px-2.5 py-1.5 rounded border border-[#2c2c2a] text-[#c3c2b7] hover:border-[#3987e5] hover:text-white">
           Import Backup
         </button>
         <input
@@ -76,7 +76,7 @@ export default function SettingsBar({
           }}
         />
         {hasTrades && (
-          <button onClick={onClearAll} className="text-xs px-3 py-2 rounded border border-[#2c2c2a] text-[#e66767] hover:border-[#e66767]">
+          <button onClick={onClearAll} className="text-xs px-2.5 py-1.5 rounded border border-[#2c2c2a] text-[#e66767] hover:border-[#e66767]">
             Hapus Semua
           </button>
         )}

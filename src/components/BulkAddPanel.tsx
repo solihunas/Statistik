@@ -27,7 +27,7 @@ export default function BulkAddPanel({ onAddTrades }: Props) {
   }
 
   return (
-    <div className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-4">
+    <div className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-3">
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex items-center justify-between w-full text-left"
@@ -39,7 +39,7 @@ export default function BulkAddPanel({ onAddTrades }: Props) {
       </button>
 
       {open && (
-        <div className="mt-4 space-y-3">
+        <div className="mt-3 space-y-2">
           <div className="bg-[#1a1a19] border border-[#2c2c2a] rounded p-3">
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs text-[#898781]">

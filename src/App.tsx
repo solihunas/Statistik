@@ -9,13 +9,13 @@ import TradeTable from './components/TradeTable';
 import Dashboard from './components/Dashboard';
 import BulkAddPanel from './components/BulkAddPanel';
 
-type Tab = 'input' | 'dashboard';
+type Tab = 'admin' | 'preview';
 
 function App() {
   const initial = useMemo(() => loadState(), []);
   const [settings, setSettings] = useState<AppSettings>(initial.settings);
   const [trades, setTrades] = useState<Trade[]>(initial.trades);
-  const [tab, setTab] = useState<Tab>(initial.trades.length ? 'dashboard' : 'input');
+  const [tab, setTab] = useState<Tab>(initial.trades.length ? 'preview' : 'admin');
   const [editingTrade, setEditingTrade] = useState<Trade | null>(null);
 
   useEffect(() => {
@@ -66,30 +66,27 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0d]">
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="flex items-center justify-between mb-5">
-          <div>
-            <h1 className="text-lg md:text-xl font-semibold text-white">Trading Journal &amp; Report</h1>
-            <p className="text-xs text-[#898781] mt-0.5">Catat trade Anda, laporan performa dihitung otomatis.</p>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="flex items-center justify-between mb-3">
+          <h1 className="text-base font-semibold text-white">Trading Journal</h1>
           <div className="flex gap-1 bg-[#141412] border border-[#2c2c2a] rounded-md p-1">
             <button
-              onClick={() => setTab('input')}
-              className={`text-xs px-3 py-1.5 rounded ${tab === 'input' ? 'bg-[#3987e5] text-white' : 'text-[#898781] hover:text-white'}`}
+              onClick={() => setTab('admin')}
+              className={`text-xs px-3 py-1.5 rounded ${tab === 'admin' ? 'bg-[#3987e5] text-white' : 'text-[#898781] hover:text-white'}`}
             >
-              Input Data
+              Admin
             </button>
             <button
-              onClick={() => setTab('dashboard')}
-              className={`text-xs px-3 py-1.5 rounded ${tab === 'dashboard' ? 'bg-[#3987e5] text-white' : 'text-[#898781] hover:text-white'}`}
+              onClick={() => setTab('preview')}
+              className={`text-xs px-3 py-1.5 rounded ${tab === 'preview' ? 'bg-[#3987e5] text-white' : 'text-[#898781] hover:text-white'}`}
             >
-              Dashboard
+              Preview
             </button>
           </div>
         </div>
 
-        {tab === 'input' ? (
-          <div className="space-y-4">
+        {tab === 'admin' ? (
+          <div className="space-y-3">
             <SettingsBar
               settings={settings}
               onChangeSettings={setSettings}

@@ -12,9 +12,9 @@ const toneClass: Record<NonNullable<StatCardProps['tone']>, string> = {
 
 export default function StatCard({ label, value, tone = 'default' }: StatCardProps) {
   return (
-    <div className="border border-[#2c2c2a] bg-[#141412] rounded-md px-4 py-3 min-w-[130px] flex-1">
-      <div className="text-[11px] uppercase tracking-wide text-[#898781] whitespace-nowrap">{label}</div>
-      <div className={`text-xl md:text-2xl font-semibold mt-1 ${toneClass[tone]}`}>{value}</div>
+    <div className="border border-[#2c2c2a] bg-[#141412] rounded-md px-3 py-2 min-w-[108px] flex-1">
+      <div className="text-[10px] uppercase tracking-wide text-[#898781] whitespace-nowrap">{label}</div>
+      <div className={`text-lg font-semibold mt-0.5 ${toneClass[tone]}`}>{value}</div>
     </div>
   );
 }

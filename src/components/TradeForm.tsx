@@ -84,8 +84,8 @@ export default function TradeForm({ editingTrade, onSave, onCancelEdit, lastSymb
   const labelCls = 'text-[11px] uppercase tracking-wide text-[#898781] mb-1 block';
 
   return (
-    <form onSubmit={handleSubmit} className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-4">
-      <div className="flex items-center justify-between mb-3">
+    <form onSubmit={handleSubmit} className="border border-[#2c2c2a] bg-[#111110] rounded-lg p-3">
+      <div className="flex items-center justify-between mb-2">
         <h3 className="text-xs font-semibold tracking-wide uppercase text-[#c3c2b7]">
           {editingTrade ? 'Edit Trade' : 'Catat Trade Baru'}
         </h3>
@@ -96,7 +96,7 @@ export default function TradeForm({ editingTrade, onSave, onCancelEdit, lastSymb
         )}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
         <div>
           <label className={labelCls}>Tanggal *</label>
           <input type="date" className={inputCls} value={form.date} onChange={(e) => set('date', e.target.value)} />
@@ -160,7 +160,7 @@ export default function TradeForm({ editingTrade, onSave, onCancelEdit, lastSymb
 
       {error && <div className="text-[#e66767] text-xs mt-3">{error}</div>}
 
-      <div className="mt-4 flex gap-2">
+      <div className="mt-3 flex gap-2">
         <button type="submit" className="bg-[#3987e5] hover:bg-[#2a78d6] text-white text-sm font-medium px-4 py-2 rounded">
           {editingTrade ? 'Simpan Perubahan' : 'Tambah Trade'}
         </button>
